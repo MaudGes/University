@@ -127,5 +127,3 @@ JOIN courses c on g.course_id = c.course_id
 WHERE (g.grade < 50) and (date BETWEEN "2021-09-01" and "2021-12-01")
 group by c.name
 ORDER BY Nb_of_grades_under_50 DESC
-
-	#In the last semester of 2021, the course with the most failing students is 
