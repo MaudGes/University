@@ -100,8 +100,6 @@ ORDER BY Nb_of_grades_under_50 DESC
     
 #10. Among all the students who have chosen Politics I, how many succeeded ?
 
-	#Students who have chosen Politics I
-
 SELECT  
 ROUND((SELECT COUNT(g.grade) as nb_succes
 from courses c
