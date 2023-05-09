@@ -58,7 +58,7 @@ on grades.student_id = student.student_id
 WHERE course_id = 21
 
 
-#5. Which students are enrolled in at least one course taught by a teacher with 'Smith' in their name?
+#6. Which students are enrolled in at least one course taught by a teacher with 'Smith' in their name?
 
 SELECT student.name, teachers.name
 from student
@@ -71,7 +71,7 @@ ON teachers.teacher_id = offering.teacher_id
 WHERE teachers.name LIKE '%Smith'
 
 
-#6.  Which courses are being offered in the 'Science' building?
+#7. Which courses are being offered in the 'Science' building?
 
 SELECT courses.name AS Courses_taught_in_SB
 FROM classroom
@@ -80,7 +80,7 @@ JOIn courses ON courses.course_id = offering.course_id
 WHERE classroom.building = "Science Building"
 ORDER BY courses.name ASC
 
-# 7. For each student, retrieve the student's name, major, and the number of courses they are enrolled in.
+#8. For each student, retrieve the student's name, major, and the number of courses they are enrolled in.
 
 SELECT s.name, s.major, count(g.course_id) as nb_of_courses_enrolled
 FROM student s
@@ -88,7 +88,7 @@ JOIN grades g On g.student_id = s.student_id
 GROUP by s.name
 ORDER BY nb_of_courses_enrolled DESC
 
-# 7. Which courses have the most failing students ? (grade under 50)
+#9. Which courses have the most failing students ? (grade under 50)
 
 SELECT c.name, COUNT(g.grade) as Nb_of_grades_under_50
 FROM grades g
@@ -98,7 +98,7 @@ group by c.name
 ORDER BY Nb_of_grades_under_50 DESC
 	#The harder course seems to be Politics I 
     
-# 8. Among all the students who have chosen Politics I, how many succeeded ?
+#10. Among all the students who have chosen Politics I, how many succeeded ?
 
 	#Students who have chosen Politics I
 
@@ -119,7 +119,7 @@ WHERE c.name = "Politics I" and g.grade > 50)
 
 	#Although Politics I is the harder course, it seems that 88% percent of students who try the course pass it.
     
-# 9. Which courses have the most failing students in the last semester of 2021? (grade under 50)
+#11. Which courses have the most failing students in the last semester of 2021? (grade under 50)
 
 SELECT c.name, COUNT(g.grade) as Nb_of_grades_under_50
 FROM grades g
