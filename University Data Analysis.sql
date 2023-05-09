@@ -126,4 +126,8 @@ FROM grades g
 JOIN courses c on g.course_id = c.course_id
 WHERE (g.grade < 50) and (date BETWEEN "2021-09-01" and "2021-12-01")
 group by c.name
+<<<<<<< HEAD
 ORDER BY Nb_of_grades_under_50 DESC
+=======
+ORDER BY Nb_of_grades_under_50 DESC
+>>>>>>> 01c873416bb1010d60462d6be1aaeb20d18233ae
